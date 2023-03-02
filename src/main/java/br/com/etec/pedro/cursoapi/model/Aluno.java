@@ -15,9 +15,10 @@ public class Aluno {
 
   @ManyToOne
   @JoinColumn(name = "idCurso")
-  @JoinColumn(name = "idCidade")
-
   private Curso curso;
+  
+  @ManyToOne
+  @JoinColumn(name = "idCidade")
   private Cidade cidade;
 
 

@@ -17,7 +17,7 @@ public class Cidade {
   @GeneratedValue(strategy = GenerationType.AUTO)
 
   private Integer idCidade;
-  private String NomeCidade;
+  private String nomeCidade;
   private String uf;
 
   @OneToMany(mappedBy = "cidade")
@@ -29,11 +29,12 @@ public class Cidade {
   public void setIdCidade(Integer idCidade) {
     this.idCidade = idCidade;
   }
+
   public String getNomeCidade() {
-    return NomeCidade;
+    return nomeCidade;
   }
   public void setNomeCidade(String nomeCidade) {
-    NomeCidade = nomeCidade;
+    this.nomeCidade = nomeCidade;
   }
   public String getUf() {
     return uf;
