@@ -1,14 +1,17 @@
 package br.com.etec.pedro.cursoapi.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
+
 
 @Entity
-@Table(name = "aluno")
+@Table(name = "Aluno")
+
 public class Aluno {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
 
   private Long id;
   private String nomeAluno;
