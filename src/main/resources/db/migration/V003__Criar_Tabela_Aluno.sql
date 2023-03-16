@@ -2,5 +2,7 @@ CREATE TABLE Aluno(
   idAluno BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   nomeAluno VARCHAR(100) NOT NULL,
   idCurso INT NOT NULL,
-  idCIdade INT NOT NULL
+  idCidade INT NOT NULL
 );
+
+
