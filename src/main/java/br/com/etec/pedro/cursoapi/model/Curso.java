@@ -1,5 +1,7 @@
 package br.com.etec.pedro.cursoapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,10 +17,18 @@ public class Curso {
   private Integer idcurso;
   private String nomecurso;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "curso")
   private List<Aluno> alunos = new ArrayList<>();
 
-  
+  public List<Aluno> getAlunos() {
+    return alunos;
+  }
+
+  public void setAlunos(List<Aluno> alunos) {
+    this.alunos = alunos;
+  }
+
   public Integer getIdcurso() {
     return idcurso;
   }

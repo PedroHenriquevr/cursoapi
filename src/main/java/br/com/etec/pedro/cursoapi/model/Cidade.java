@@ -2,6 +2,7 @@ package br.com.etec.pedro.cursoapi.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.*;
 
@@ -11,60 +12,56 @@ public class Cidade {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
 
-  private Integer idCidade;
-  private String nomeCidade;
+  private Integer idcidade;
+  private String nomecidade;
   private String uf;
 
   @OneToMany(mappedBy = "cidade")
     private List<Aluno> alunos = new ArrayList<>();
   
-  public Integer getIdCidade() {
-    return idCidade;
-  }
-  public void setIdCidade(Integer idCidade) {
-    this.idCidade = idCidade;
-  }
 
-  public String getNomeCidade() {
-    return nomeCidade;
-  }
-  public void setNomeCidade(String nomeCidade) {
-    this.nomeCidade = nomeCidade;
-  }
   public String getUf() {
     return uf;
   }
   public void setUf(String uf) {
     this.uf = uf;
   }
-  
+
+
+  public Integer getIdcidade() {
+    return idcidade;
+  }
+
+  public void setIdcidade(Integer idcidade) {
+    this.idcidade = idcidade;
+  }
+
+  public String getNomecidade() {
+    return nomecidade;
+  }
+
+  public void setNomecidade(String nomecidade) {
+    this.nomecidade = nomecidade;
+  }
+
+  public List<Aluno> getAlunos() {
+    return alunos;
+  }
+
+  public void setAlunos(List<Aluno> alunos) {
+    this.alunos = alunos;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Cidade cidade = (Cidade) o;
+    return idcidade.equals(cidade.idcidade);
+  }
+
   @Override
   public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + ((idCidade == null) ? 0 : idCidade.hashCode());
-    return result;
+    return Objects.hash(idcidade);
   }
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    Cidade other = (Cidade) obj;
-    if (idCidade == null) {
-      if (other.idCidade != null)
-        return false;
-    } else if (!idCidade.equals(other.idCidade))
-      return false;
-    return true;
-  }
-
-  
-
-
-
-  
 }

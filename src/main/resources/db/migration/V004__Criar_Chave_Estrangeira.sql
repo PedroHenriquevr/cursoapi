@@ -1,5 +1,5 @@
-ALTER TABLE Aluno add CONSTRAINT FK_Aluno_Curso foreign key(idCurso) references curso(idCurso);
-ALTER TABLE Aluno add CONSTRAINT FK_Aluno_Cidade foreign key(idCidade) references cidade(idCidade);  
+ALTER TABLE Aluno add CONSTRAINT FK_Aluno_Curso foreign key(idcurso) references curso(idcurso);
+ALTER TABLE Aluno add CONSTRAINT FK_Aluno_Cidade foreign key(idcidade) references cidade(idcidade);
 
 
 insert into curso(nomecurso) values ('Administração');
