@@ -16,7 +16,7 @@ public class CursoResource {
     @Autowired
     private CursoRepository cursoRepository;
 
-    @GetMapping("/todos")
+    @GetMapping()
     public List<Curso> listarTodos(){
         return cursoRepository.findAll();
     }
