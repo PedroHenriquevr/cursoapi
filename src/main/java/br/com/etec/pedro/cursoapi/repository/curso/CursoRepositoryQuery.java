@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface CursoRepositoryQuery {
 
-    public Page<Curso> filtar(CursoFilter cursoFilter, Pageable pageable);
+    public Page<Curso> filtrar(CursoFilter cursoFilter, Pageable pageable);
 
 
 }
