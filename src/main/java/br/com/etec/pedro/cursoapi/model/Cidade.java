@@ -1,5 +1,7 @@
 package br.com.etec.pedro.cursoapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,8 +18,9 @@ public class Cidade {
   private String nomecidade;
   private String uf;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "cidade")
-    private List<Aluno> alunos = new ArrayList<>();
+  private List<Aluno> alunos = new ArrayList<>();
   
 
   public String getUf() {
