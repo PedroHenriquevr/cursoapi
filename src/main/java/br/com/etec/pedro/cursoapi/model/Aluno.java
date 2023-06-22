@@ -6,7 +6,7 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name = "Aluno")
+@Table(name = "aluno")
 
 public class Aluno {
 

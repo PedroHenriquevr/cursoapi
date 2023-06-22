@@ -1,6 +1,6 @@
 CREATE TABLE Aluno(
   idaluno BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nomeAluno VARCHAR(100) NOT NULL,
+  nomealuno VARCHAR(100) NOT NULL,
   idcurso INT NOT NULL,
   idcidade INT NOT NULL
 );

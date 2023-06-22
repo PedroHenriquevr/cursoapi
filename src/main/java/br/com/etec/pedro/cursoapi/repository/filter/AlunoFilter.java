@@ -4,7 +4,7 @@ public class AlunoFilter {
 
     private String nomealuno;
 
-    private String nomecursos;
+    private String nomecurso;
 
     private String nomecidade;
 
@@ -18,12 +18,12 @@ public class AlunoFilter {
         this.nomealuno = nomealuno;
     }
 
-    public String getNomecursos() {
-        return nomecursos;
+    public String getNomecurso() {
+        return nomecurso;
     }
 
-    public void setNomecursos(String nomecursos) {
-        this.nomecursos = nomecursos;
+    public void setNomecurso(String nomecurso) {
+        this.nomecurso = nomecurso;
     }
 
     public String getNomecidade() {

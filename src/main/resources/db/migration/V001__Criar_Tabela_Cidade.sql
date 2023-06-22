@@ -1,6 +1,6 @@
 CREATE TABLE cidade(
   idcidade INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nomeCidade VARCHAR(100) NOT NULL,
+  nomecidade VARCHAR(100) NOT NULL,
   uf VARCHAR(2) NOT NULL
 
 );

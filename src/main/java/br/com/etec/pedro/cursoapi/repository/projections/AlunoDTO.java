@@ -1,30 +1,30 @@
 package br.com.etec.pedro.cursoapi.repository.projections;
 
 public class AlunoDTO {
-    private Long id;
+    private Long idaluno;
 
     private String nomealuno;
 
-    private String cidade;
+    private String nomecidade;
 
     private String uf;
 
     private String nomecurso;
 
-    public AlunoDTO(Long id, String nomealuno, String cidade, String uf, String nomecurso) {
-        this.id = id;
+    public AlunoDTO(Long idaluno, String nomealuno, String nomecidade, String uf, String nomecurso) {
+        this.idaluno = idaluno;
         this.nomealuno = nomealuno;
-        this.cidade = cidade;
+        this.nomecidade = nomecidade;
         this.uf = uf;
         this.nomecurso = nomecurso;
     }
 
     public Long getId() {
-        return id;
+        return idaluno;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.idaluno = id;
     }
 
     public String getNomealuno() {
@@ -36,11 +36,11 @@ public class AlunoDTO {
     }
 
     public String getCidade() {
-        return cidade;
+        return nomecidade;
     }
 
     public void setCidade(String cidade) {
-        this.cidade = cidade;
+        this.nomecidade = cidade;
     }
 
     public String getUf() {

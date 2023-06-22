@@ -9,7 +9,7 @@ import java.util.Objects;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Cidade")
+@Table(name = "cidade")
 public class Cidade {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

@@ -31,7 +31,7 @@ public class AlunoRepositoryImpl implements AlunoRepositoryQuery {
         CriteriaQuery<AlunoDTO> criteria = builder.createQuery(AlunoDTO.class);
         Root<Aluno> root = criteria.from(Aluno.class);
 
-        criteria.select(builder.construct(AlunoDTO.class, root.get("id"), root.get("nomealuno"), root.get("cidade").get("nomecidade"), root.get("cidade").get("uf"), root.get("curso").get("nomecurso") ));
+        criteria.select(builder.construct(AlunoDTO.class, root.get("idaluno"), root.get("nomealuno"), root.get("cidade").get("nomecidade"), root.get("cidade").get("uf"), root.get("curso").get("nomecurso") ));
 
         Predicate[] predicates = criarRestricoes(alunoFilter, builder , root);
         criteria.where(predicates);
@@ -75,6 +75,18 @@ public class AlunoRepositoryImpl implements AlunoRepositoryQuery {
             predicates.add(builder.like(builder.lower(root.get("nomealuno")),
                     "%" + alunoFilter.getNomealuno().toLowerCase() + "%"));
         }
+        if (!StringUtils.isEmpty(alunoFilter.getNomecidade())) {
+            predicates.add(builder.like(builder.lower(root.get("cidade").get("nomecidade")),
+                    "%" + alunoFilter.getNomecidade().toLowerCase() + "%"));
+        }
+        if (!StringUtils.isEmpty(alunoFilter.getUf())) {
+            predicates.add(builder.equal(builder.lower(root.get("cidade").get("uf")),alunoFilter.getUf().toLowerCase()));
+        }
+        if (!StringUtils.isEmpty(alunoFilter.getNomecurso())) {
+            predicates.add(builder.like(builder.lower(root.get("curso").get("nomecurso")),
+                    "%" + alunoFilter.getNomecurso().toLowerCase() + "%"));
+        }
+
         return predicates.toArray(new Predicate[predicates.size()]);
     }
 
